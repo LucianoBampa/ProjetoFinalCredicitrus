@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #00B29A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0; /* Remove margens padrão */
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+header img {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+}
+
+.form-container {
+    width: 90%;
+    max-width: 400px; 
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.form-container h2 {
+    margin-bottom: 10px;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que o padding esteja dentro da largura */
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container p {
+    margin-top: 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    header img {
+        width: 90%;
+    }
+}
+
+/* Ajustes adicionais para telas ainda menores */
+@media (max-width: 480px) {
+    header img {
+        width: 90%; /* Aumenta a largura da imagem em telas muito pequenas */
+    }
+
+    .form-container {
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .form-container h2 {
+        font-size: 1.5em; /* Ajusta o tamanho da fonte */
+    }
+}
+
+.profile-picture img {
+    width: 100px; /* Ajuste conforme necessário */
+    height: 100px; /* Ajuste conforme necessário */
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover; /* Para garantir que a imagem preencha o espaço */
+}
+
+textarea {
+    resize: none; /* Para evitar redimensionamento */
+}
+
+/* Ajuste ícone senha */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    padding-right: 40px; /* Aumenta o espaço à direita para o ícone */
+    width: 100%; /* Garante que o input ocupe toda a largura do contêiner */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Posição do ícone à direita */
+    top: 50%; /* Alinha verticalmente ao centro */
+    transform: translateY(-50%); /* Ajusta para centralizar verticalmente */
+    cursor: pointer;
+    z-index: 1; /* Garante que o ícone fique acima do campo de texto */
+}
+

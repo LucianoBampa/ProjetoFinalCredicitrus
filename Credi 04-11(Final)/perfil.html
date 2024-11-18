@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Credicitrus Blog</title>
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+    <header class="header">
+        <img src="logosemfundo.png" alt="Logo Credicitrus" class="logo">
+        <nav class="menu">
+            <a href="principal.html">Início</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="index.html" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="profile">
+            <div class="profile-picture">
+                <img id="profile-image" src="avatar_placeholder.png" alt="Foto de Perfil">
+                <input type="file" id="upload-image" accept="image/*" onchange="uploadProfileImage()">
+            </div>
+            <h2 id="user-name" class="name">Nome do Usuário</h2>
+
+            <div class="about">
+                <textarea id="aboutText" placeholder="Descrição sobre você" readonly></textarea>
+                <button onclick="editAbout()">Editar</button>
+            </div>
+
+            <div class="update-info">
+                <h3>Atualizar Cadastro</h3>
+                <input type="text" id="new-username" placeholder="Novo Nome de Usuário">
+                <input type="email" id="new-email" placeholder="Novo E-mail">
+                
+                <!-- Campo de senha com ícone de visualização -->
+                <div class="password-container">
+                    <input type="password" id="novaSenha" placeholder="Nova senha">
+                    <span class="toggle-password" onclick="togglePassword('novaSenha')">🚫</span> <!-- Ícone padrão de olho fechado -->
+                </div>
+                
+                <button onclick="updateUserInfo()">Atualizar</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="perfil.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- HTML da página principal -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial - Credicitrus</title>
+    <link rel="stylesheet" href="principal.css">
+</head>
+<body>
+    <header class="header">
+        <img src="logosemfundo.png" alt="Logo Credicitrus" class="logo">
+        <nav class="menu">
+            <a href="principal.html">Início</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="index.html" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="profile">
+            <div class="profile-picture">
+                <img id="profile-image" src="avatar_placeholder.png" alt="Foto de Perfil">
+            </div>
+            <h2 id="user-name" class="name">Meu Nome</h2>
+            <p id="user-description" class="description">Descrição do perfil</p>
+        </section>
+
+        <section class="publish">
+            <textarea id="publishInput" placeholder="Comece a publicar" class="publish-input"></textarea>
+            <div class="publish-options">
+                <button class="publish-button" onclick="document.getElementById('imageInput').click()">Anexar Imagem</button>
+                <button class="publish-button" onclick="document.getElementById('fileInput').click()">Anexar Arquivo</button>
+                <button class="publish-button" onclick="publicarTexto()">Publicar</button>
+            </div>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="handleImageUpload(event)">
+            <input type="file" id="fileInput" style="display: none;" onchange="handleFileUpload(event)">
+            <div id="media-preview"></div>
+            <div class="posts" id="postsContainer"></div> <!-- Container para as postagens -->
+        </section>
+
+        <aside class="messages">
+            <h3>Mensagens</h3>
+            <input type="text" placeholder="Pesquisa Mensagens" id="messageSearch">
+            <button class="publish-button" id="searchButton">Buscar</button>
+            <ul id="searchResults"></ul> <!-- Exibição dos resultados da busca -->
+        </aside>
+
+    </main>
+
+
+    <script src="principal.js"></script>
+</body>
+</html>

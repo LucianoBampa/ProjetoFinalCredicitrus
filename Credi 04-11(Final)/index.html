@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - CREDICITRUS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logocred.jpeg" alt="Logo CREDICITRUS" class="logo">
+    </header>
+    <div class="form-container">
+        <h2>Cadastro</h2>
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="email" id="email" placeholder="Email">
+        <input type="date" id="dataNascimento" placeholder="Data de Nascimento">
+        <div class="password-container">
+            <input type="password" id="senha" placeholder="Senha">
+            <span class="toggle-password" onclick="togglePassword('senha')">🚫</span>
+        </div>
+        <button onclick="cadastrarUsuario()">Cadastrar</button>
+        <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+    </div>
+    <script src="principal.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CREDICITRUS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logocred.jpeg" alt="Logo CREDICITRUS" class="logo">
+    </header>
+    <div class="form-container">
+        <h2>Login</h2>
+        <input type="text" id="usuario" placeholder="E-mail">
+        <div class="password-container">
+            <input type="password" id="senhaLogin" placeholder="Senha">
+            <span class="toggle-password" onclick="togglePassword('senhaLogin')">🚫</span>
+        </div>
+        <button onclick="loginUsuario()">Entrar</button>
+        <p>Não tem uma conta? <a href="index.html">Cadastre-se</a></p>
+    </div>
+    <script src="principal.js"></script>
+</body>
+</html>

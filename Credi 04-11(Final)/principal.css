@@ -1,0 +1,480 @@
+/* Ajustes globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F7F8FA;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: #00293C;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 70px;
+    margin-right: auto;
+}
+
+.menu a {
+    color: #fff;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Seção de perfil */
+.profile {
+    width: 100%;
+    max-width: 250px;
+    background-color: #EDEDED;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes na imagem e ícone do perfil */
+.profile-picture {
+    background-color: #555;
+    color: #fff;
+    border-radius: 50%;
+    width: 80px; /* Largura fixa do avatar */
+    height: 80px; /* Altura fixa do avatar */
+    margin: 0 auto 10px; /* Centraliza o avatar */
+    overflow: hidden; /* Esconde parte da imagem que excede o contêiner */
+    display: flex;
+    align-items: center; /* Centraliza a imagem verticalmente */
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+}
+
+.profile-picture img {
+    width: 100%; /* A imagem ocupa toda a largura do contêiner */
+    height: auto; /* A altura será ajustada automaticamente */
+    object-fit: cover; /* A imagem cobre todo o espaço, mantendo a proporção */
+}
+
+#media-preview {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden; /* Impede que a imagem ultrapasse os limites */
+    text-align: center; /* Centraliza o conteúdo dentro do contêiner */
+}
+
+#media-preview img {
+    max-width: 100%; /* A imagem nunca será maior que o contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* A imagem se ajusta para caber no contêiner */
+    border-radius: 8px; /* Borda arredondada opcional */
+    display: block; /* Remove espaços extras causados por inline elements */
+}
+
+@media (max-width: 768px) {
+    #media-preview img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    #media-preview {
+        width: 100%; /* O contêiner ocupa toda a largura da tela em dispositivos menores */
+    }
+}
+
+
+    .profile-picture {
+        width: 60px; /* Diminuindo o tamanho do avatar para telas pequenas */
+        height: 60px;
+    }
+
+    .publish-input {
+        width: 100%; /* A caixa de entrada vai ocupar toda a largura */
+        min-height: 80px; /* Altura mínima para a caixa de entrada */
+    }
+}
+
+
+.publish {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Entrada de publicação */
+.publish-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.publish-options {
+    display: flex;
+    gap: 10px;
+}
+
+.publish-button {
+    padding: 5px 15px;
+    background-color: #00B29A;
+    color: #fff;
+    border: none;
+    border-radius: 12px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.publish-button:hover {
+    background-color: #008B75;
+}
+
+.post {
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #555;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+}
+
+/* Seção de mensagens */
+.messages {
+    background-color: #90C348;
+    width: 30%;
+    padding: 20px;
+    color: #000;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .profile,
+    .publish,
+    .messages {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 20px;
+    }
+
+    .messages {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .publish-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .publish-button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .post-actions {
+        font-size: 18px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        margin-top: 10px;
+    }
+
+    /* Redução do tamanho do texto */
+    .profile, .publish, .messages {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .menu {
+        font-size: 0.9em;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .profile,
+    .publish,
+    .messages {
+        font-size: 0.85em;
+        padding: 15px;
+    }
+}
+
+/* Responsividade para o botão de upload */
+@media (max-width: 768px) {
+    .upload-button {
+        width: 100%; /* Faz o botão ocupar toda a largura do contêiner */
+        padding: 10px;
+        font-size: 16px; /* Ajusta o tamanho da fonte */
+    }
+}
+
+
+/* Seção de mensagens */
+.messages {
+    background-color: #90C348;
+    width: 100%;
+    padding: 20px;
+    color: #000;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.messages .publish-input {
+    width: 100%; /* Faz a caixa de busca ocupar toda a largura */
+    padding: 70px;
+    margin-bottom: 15px; /* Espaço abaixo da caixa de busca */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#messageSearch {
+    width: 80%; /* Faz a caixa de busca ocupar toda a largura do contêiner */
+    max-width: 400px; /* Define uma largura máxima */
+    padding: 12px; /* Aumenta o espaçamento interno */
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    border: 1px solid #ccc; /* Define a borda */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+#messageSearch:focus {
+    border-color: #00B29A; /* Cor da borda ao focar */
+    background-color: #f7f7f7; /* Cor de fundo ao focar */
+}
+
+
+.post {
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.post-name {
+    font-weight: bold;
+}
+
+.post-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Estilos para a label de descrição */
+.description-label {
+    display: block; /* Faz a label ocupar a linha inteira */
+    margin-bottom: 5px; /* Espaço entre a label e a caixa de texto */
+    font-weight: bold; /* Deixa a label em negrito para destaque */
+}
+
+/* Estilos para a caixa de texto */
+.description-input {
+    width: 100%; /* Faz a caixa ocupar toda a largura disponível */
+    height: 100px; /* Altura da caixa de texto */
+    padding: 10px; /* Preenchimento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    border: 1px solid #ccc; /* Borda padrão */
+    background-color: #fff; /* Cor de fundo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-size: 16px; /* Tamanho da fonte */
+    resize: none; /* Desativa a possibilidade de redimensionar */
+    margin-bottom: 15px; /* Espaço abaixo da caixa */
+}
+
+/* Ajustes no foco */
+.description-input:focus {
+    border-color: #00B29A; /* Cor da borda ao focar */
+    outline: none; /* Remove contorno padrão */
+}
+
+.post p {
+    word-break: break-word; /* Quebra palavras longas */
+    white-space: pre-wrap; /* Permite quebras de linha */
+    max-width: 100%; /* Garante que o texto se ajuste à caixa */
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word; /* Quebra palavras que ultrapassem o limite */
+    overflow-wrap: break-word; /* Força quebra de palavras longas */
+}
+
+.publish-input {
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    resize: vertical; /* Permite redimensionamento vertical */
+    padding: 10px;
+    font-size: 16px;
+    overflow: auto; /* Adiciona rolagem se o texto ultrapassar a altura */
+}
+
+.highlight {
+    background-color: yellow; /* Destaque em amarelo */
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Ajuste ícone senha */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    padding-right: 40px; /* Aumenta o espaço à direita para o ícone */
+    width: 100%; /* Garante que o input ocupe toda a largura do contêiner */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Posição do ícone à direita */
+    top: 50%; /* Alinha verticalmente ao centro */
+    transform: translateY(-50%); /* Ajusta para centralizar verticalmente */
+    cursor: pointer;
+    z-index: 1; /* Garante que o ícone fique acima do campo de texto */
+}
+
+/* Estilização do container de posts */
+#postsContainer {
+    display: flex; /* Permite organizar os posts de forma flexível */
+    flex-direction: column; /* Empilha os posts verticalmente */
+    gap: 20px; /* Espaçamento entre posts */
+    padding: 10px; /* Adiciona espaço interno */
+    background-color: #f9f9f9; /* Cor de fundo opcional */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Estilização das imagens publicadas nos posts */
+#postsContainer img {
+    max-width: 100%; /* A imagem se ajusta ao tamanho do container */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* Ajusta a imagem dentro do espaço disponível */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    #postsContainer {
+        padding: 5px;
+    }
+
+    #postsContainer img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Container de resultados de busca */
+#searchResults {
+    max-width: 100%; /* Limita a largura máxima */
+    overflow: hidden; /* Impede conteúdos de extrapolar os limites */
+    list-style: none; /* Remove a marcação padrão da lista */
+    padding: 0;
+    margin: 0;
+}
+
+/* Itens dentro da lista de busca */
+#searchResults li {
+    display: flex; /* Permite alinhar imagens e texto */
+    flex-direction: column; /* Alinha conteúdo verticalmente */
+    gap: 10px; /* Espaçamento entre elementos */
+    margin-bottom: 15px; /* Espaçamento entre resultados */
+    padding: 10px;
+    background-color: #fff; /* Fundo branco para destacar o resultado */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para os itens */
+    overflow: hidden; /* Evita conteúdos que extrapolam o container */
+}
+
+/* Ajustando imagens nos resultados */
+#searchResults img {
+    max-width: 100%; /* Garante que a imagem não extrapole */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* Ajusta a imagem ao espaço disponível */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+
+
